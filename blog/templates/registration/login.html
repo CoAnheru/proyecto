@@ -2,7 +2,7 @@
  
 {% block content %}
     {% if form.errors %}
-        <p>Your username and password didn't match. Please try again.</p>
+        <p>Tus credenciales son invalidas. Prueba de nuevo.</p>
     {% endif %}
  
     <form method="post" action="{% url 'login' %}">
@@ -16,9 +16,12 @@
             <td>{{ form.password.label_tag }}</td>
             <td>{{ form.password }}</td>
         </tr>
+        <tr>
+            <td><p>Aun no estas registrado? <a href="{% url 'signup' %}">Registrate aqui</a></p></td>
+        </tr>
         </table>
  
-        <input type="submit" value="login" />
+        <input type="submit" value="Entrar" />
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
 {% endblock %}
